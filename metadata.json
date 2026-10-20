@@ -1,0 +1,8 @@
+{
+  "name": "Zhagaram Trust — ழகரம் அறக்கட்டளை",
+  "description": "Bilingual Tamil Knowledge & Medical Education Platform — தாய்மொழியில் அறிவோம், அறிவியலில் உயர்வோம்",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

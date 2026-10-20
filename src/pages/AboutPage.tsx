@@ -1,0 +1,233 @@
+import React from 'react';
+import { Target, BookOpen, HeartPulse, GraduationCap, CheckCircle2, ShieldCheck, Mail, MapPin } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import { useData } from '../context/DataContext';
+import { TrustLogo, BookCoverGraphic } from '../components/common/VisualAsset';
+
+interface AboutPageProps {
+  onNavigate: (route: string) => void;
+}
+
+export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
+  const { language, t } = useLanguage();
+  const { settings } = useData();
+
+  const objectives = [
+    {
+      title_ta: 'தமிழ் வழி மருத்துவப் பாடத்திட்டம்',
+      title_en: 'Tamil-Medium Medical Curriculum',
+      desc_ta: 'மருத்துவக் கல்லூரி மாணவர்களுக்கு மனித உடற்கூறியல், உடலியங்கியல், நோய்க்குறியியல் மற்றும் மருந்தியல் ஆகிய முதன்மைப் பாடங்களை எளிய, துல்லியமான தமிழில் வழங்குதல்.',
+      desc_en: 'Authoring and validating foundational medical textbooks—Anatomy, Physiology, Pathology, and Pharmacology—in lucid, semantically precise Tamil.',
+    },
+    {
+      title_ta: 'செம்மையான மருத்துவக் கலைச்சொல்லாக்கம்',
+      title_en: 'Rigorous Medical Lexicography',
+      desc_ta: 'ஆங்கில மருத்துவச் சொற்களுக்கு இணையான தமிழ்ச் சொற்களை வேர்ச்சொல் ஆய்வு மற்றும் இலக்கணக் கோட்பாடுகளின்படி உருவாக்கி களஞ்சியங்களாக வெளியிடுதல்.',
+      desc_en: 'Etymologically anchored standardization of allopathic clinical terms into coherent Tamil terminology adhering to classical morphosyntax.',
+    },
+    {
+      title_ta: 'இலவச திறந்தவெளி டிஜிட்டல் கல்வி',
+      title_en: 'Open-Access Digital Repository',
+      desc_ta: 'விரிவுரைக் காணொளிகள், மாதிரி வினாத்தாள்கள் மற்றும் மருத்துவ ஆவணங்களை மாணவர்கள் எவ்வித கட்டணமுமின்றி இணையவழியே அணுக வகைசெய்தல்.',
+      desc_en: 'Providing open-access high-definition video lecture playlists and digital PDF documents to empower students regardless of socioeconomic barriers.',
+    },
+    {
+      title_ta: 'கிராமப்புற மக்கள் நல்வாழ்வு விழிப்புணர்வு',
+      title_en: 'Grassroots Preventative Health',
+      desc_ta: 'மருத்துவ மற்றும் சுகாதார விழிப்புணர்வை தாய்மொழியில் எளிய மக்களிடம் கொண்டு சேர்த்து ஆரோக்கியமான சமுதாயத்தை உருவாக்குதல்.',
+      desc_en: 'Conducting rural community health camps and circulating mother-tongue preventative healthcare literature to build healthier grassroots communities.',
+    },
+  ];
+
+  const advisoryMembers = [
+    {
+      name_ta: 'பேராசிரியர் மரு. க. கார்த்திகேயன், MS',
+      name_en: 'Prof. Dr. K. Karthikeyan, MS',
+      role_ta: 'உடற்கூறியல் துறைத் தலைவர் & கல்வி ஆலோசகர்',
+      role_en: 'Head of Anatomy & Academic Advisory Board',
+      bio_ta: 'மூன்று தசாப்தங்களுக்கும் மேலாக அரசு மருத்துவக் கல்லூரிகளில் உடற்கூறியல் பேராசிரியராகப் பணியாற்றி, தமிழ் வழி மருத்துவப் பாடநூல்களை செம்மைப்படுத்தியவர்.',
+      bio_en: 'Over 30 years of clinical and academic teaching experience in Government Medical Colleges, leading the Tamil Anatomy textbook initiative.',
+    },
+    {
+      name_ta: 'முனைவர் க. சுப்பிரமணியன், Ph.D.',
+      name_en: 'Dr. K. Subramanian, Ph.D.',
+      role_ta: 'முதன்மை மொழியியல் மற்றும் கலைச்சொல்லாக்க ஆய்வாளர்',
+      role_en: 'Chief Lexicographer & Linguistic Advisor',
+      bio_ta: 'அறிவியல் மற்றும் மருத்துவ கலைச்சொல் உருவாக்கத்தில் தனித்துவமான ஆய்வுப் பங்களிப்பை வழங்கிய மூத்த தமிழ் மொழியியல் அறிஞர்.',
+      bio_en: 'Distinguished lexicographer who has spearheaded the coinage and validation of over 15,000 modern scientific and clinical terms.',
+    },
+    {
+      name_ta: 'மரு. ச. மீனாட்சி, MD (Physiology)',
+      name_en: 'Dr. S. Meenakshi, MD (Physiology)',
+      role_ta: 'உடலியங்கியல் விரிவுரை ஒருங்கிணைப்பாளர்',
+      role_en: 'Physiology Lecture Series Lead',
+      bio_ta: 'மருத்துவ மாணவர்களுக்கான இதய சுற்றோட்டம் மற்றும் நரம்பியல் உடலியங்கியல் விரிவுரைகளை தமிழில் எளிமையாக வடிவமைத்தவர்.',
+      bio_en: 'Physiology specialist dedicated to delivering conceptual video modules and illustrated lecture notes in Tamil.',
+    },
+  ];
+
+  return (
+    <div className="py-12 md:py-20 bg-[#FAF8F5]">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Page Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 mb-3">
+            <TrustLogo size={32} />
+            <span className="text-xs uppercase tracking-widest font-semibold text-[#C85A32]">
+              {t('எங்களைப் பற்றி · அறக்கட்டளையின் நோக்கு', 'About Zhagaram Trust · Foundations')}
+            </span>
+          </div>
+
+          <h1 className="font-tamil-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#132B20] leading-tight">
+            {t(
+              'தாய்மொழியில் அறிவோம். அறிவியலில் உயர்வோம்.',
+              'Learn in Your Language. Grow Through Knowledge.'
+            )}
+          </h1>
+
+          <p className="font-serif italic text-base md:text-lg text-[#5C5044] mt-3">
+            {t(
+              'ழகரம் அறக்கட்டளையின் கல்வி மற்றும் அறிவியல் ஆவணப் பணி',
+              'The Mission & Vision of Zhagaram Educational & Medical Foundation'
+            )}
+          </p>
+          <div className="w-16 h-0.5 bg-[#C85A32] mx-auto mt-6" />
+        </div>
+
+        {/* Editorial Vision & Mission Section */}
+        <div className="bg-white border border-[#E5DCD0] rounded-sm p-8 md:p-12 mb-16 shadow-xs">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div>
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#C85A32] mb-2">
+                <Target className="w-4 h-4" />
+                <span>{t('எங்கள் தொலைநோக்குப் பார்வை (Vision)', 'Our Vision')}</span>
+              </div>
+              <h2 className="font-tamil-serif font-bold text-xl md:text-2xl text-[#132B20] mb-3">
+                {t('அறிவியல் அறிவை தாய்மொழியில் அடைதல்', 'Democratizing Higher Medical Education')}
+              </h2>
+              <p className="text-xs md:text-sm text-[#4A4036] leading-relaxed font-tamil-sans">
+                {t(
+                  'மருத்துவம், அறிவியல் மற்றும் உயர்தொழில்நுட்ப அறிவு எந்தவொரு மொழித் தடையுமின்றி ஒவ்வொரு தமிழ் மாணவருக்கும் எட்டக்கூடியதாக இருக்க வேண்டும். தாய்மொழியில் சிந்திப்பதும் கற்பதும் அறிவின் ஆழத்தையும் படைப்பாற்றலையும் மேம்படுத்துகிறது.',
+                  'To eradicate linguistic barriers in healthcare education, enabling every student to master clinical and scientific sciences in Tamil, elevating deep cognitive comprehension, clinical empathy, and research excellence.'
+                )}
+              </p>
+            </div>
+
+            <div>
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#1E4D38] mb-2">
+                <HeartPulse className="w-4 h-4" />
+                <span>{t('எங்கள் செயல்நோக்கம் (Mission)', 'Our Mission')}</span>
+              </div>
+              <h2 className="font-tamil-serif font-bold text-xl md:text-2xl text-[#132B20] mb-3">
+                {t('செம்மையான பாடநூல்களும் காணொளிகளும்', 'World-Class Textbooks & Open Pedagogy')}
+              </h2>
+              <p className="text-xs md:text-sm text-[#4A4036] leading-relaxed font-tamil-sans">
+                {t(
+                  'தேசிய மருத்துவ ஆணையத்தின் வழிகாட்டுதலுக்கு உட்பட்டு, மருத்துவ இளநிலைப் பட்டப் படிப்பிற்கான (MBBS) தரமான தமிழ் பாடநூல்கள், கலைச்சொல் அகராதிகள் மற்றும் விரிவுரைக் காணொளிகளை உருவாக்கி இலவசமாகவும் நியாயமான விலையிலும் வழங்குதல்.',
+                  'To author accredited bilingual textbooks, compile authoritative medical glossaries, record video lecture series, and conduct grassroots health awareness camps in full transparency and rigorous scholarship.'
+                )}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Core Objectives List */}
+        <div className="mb-16">
+          <div className="text-center mb-8">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#C85A32]">
+              {t('முக்கிய இலக்குகள்', 'Key Objectives')}
+            </span>
+            <h2 className="font-tamil-serif text-2xl sm:text-3xl font-bold text-[#132B20] mt-1">
+              {t('அறக்கட்டளையின் நான்கு தூண்கள்', 'Four Foundational Pillars')}
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {objectives.map((obj, i) => (
+              <div key={i} className="p-6 bg-white border border-[#E5DCD0] rounded-sm shadow-xs">
+                <div className="flex items-center gap-2 text-xs font-bold text-[#C85A32] mb-2">
+                  <span>0{i + 1}.</span>
+                  <span className="uppercase tracking-wider">
+                    {language === 'ta' ? obj.title_ta : obj.title_en}
+                  </span>
+                </div>
+                <h3 className="font-tamil-serif font-bold text-lg text-[#19231D] mb-2">
+                  {language === 'ta' ? obj.title_ta : obj.title_en}
+                </h3>
+                <p className="text-xs text-[#5C5044] leading-relaxed">
+                  {language === 'ta' ? obj.desc_ta : obj.desc_en}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Academic Advisory Board */}
+        <div className="mb-16">
+          <div className="text-center mb-8">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#C85A32]">
+              {t('வழிகாட்டும் அறிஞர்கள்', 'Scholarly Guidance')}
+            </span>
+            <h2 className="font-tamil-serif text-2xl sm:text-3xl font-bold text-[#132B20] mt-1">
+              {t('கல்வி மற்றும் மருத்துவ ஆலோசகர்கள்', 'Academic Advisory Board')}
+            </h2>
+            <p className="text-xs text-[#786E63] font-serif italic mt-1">
+              {t('பாடத்திட்டம் மற்றும் கலைச்சொல்லாக்கத்தை மேற்பார்வையிடும் மருத்துவப் பேராசிரியர்கள்', 'Professors and linguists overseeing textbook peer reviews')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {advisoryMembers.map((member, i) => (
+              <div key={i} className="p-6 bg-white border border-[#E5DCD0] rounded-sm shadow-xs flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-full bg-[#132B20] text-white flex items-center justify-center font-serif text-lg font-bold mb-4">
+                    {member.name_en.charAt(0)}
+                  </div>
+                  <h3 className="font-tamil-sans font-bold text-base text-[#19231D] mb-1">
+                    {language === 'ta' ? member.name_ta : member.name_en}
+                  </h3>
+                  <p className="text-xs text-[#C85A32] font-semibold mb-3">
+                    {language === 'ta' ? member.role_ta : member.role_en}
+                  </p>
+                  <p className="text-xs text-[#5C5044] leading-relaxed">
+                    {language === 'ta' ? member.bio_ta : member.bio_en}
+                  </p>
+                </div>
+                <div className="pt-4 mt-6 border-t border-[#F2ECE3] flex items-center gap-1.5 text-[11px] text-[#786E63]">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>{t('சரிபார்க்கப்பட்ட கல்வி ஆலோசகர்', 'Verified Board Advisor')}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Registration & Legal Verification */}
+        <div className="p-8 bg-[#132B20] text-white rounded-sm">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-[#E5A086] font-semibold mb-1">
+                <ShieldCheck className="w-4 h-4" />
+                <span>{t('அங்கீகரிக்கப்பட்ட கல்வி அறக்கட்டளை', 'Registered Educational Trust')}</span>
+              </div>
+              <h3 className="font-tamil-serif font-bold text-xl text-white">
+                {t(settings.trust_name_ta, settings.trust_name_en)}
+              </h3>
+              <p className="text-xs text-[#A6B8AC] mt-1">
+                {t('அரசு பதிவு எண்:', 'Govt Registration Number:')} {settings.registration_number}
+              </p>
+            </div>
+
+            <button
+              onClick={() => onNavigate('/contact')}
+              className="px-5 py-2.5 bg-[#C85A32] hover:bg-[#B54E29] text-white text-xs font-semibold rounded-sm transition-colors whitespace-nowrap"
+            >
+              {t('அறக்கட்டளையைத் தொடர்பு கொள்க', 'Connect with the Trust')}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
