@@ -1,99 +1,53 @@
 # Zhagaram Trust — ழகரம் அறக்கட்டளை
 
-<div align="center">
-
-**தாய்மொழியில் அறிவோம், அறிவியலில் உயர்வோம்**  
-*Learn in Your Language. Grow Through Knowledge.*
-
-[![Bilingual Platform](https://img.shields.io/badge/Language-Tamil%20%7C%20English-C85A32.svg)](https://zhagaramtrust.org)
-[![React 19](https://img.shields.io/badge/React-19-132B20.svg)](https://react.dev/)
-[![Vite 8](https://img.shields.io/badge/Vite-8-646CFF.svg)](https://vitejs.dev/)
-[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind-v4-38B2AC.svg)](https://tailwindcss.com/)
-
-</div>
+> **"தாய்மொழியில் அறிவோம். அறிவியலில் உயர்வோம்."**  
+> *Bilingual Tamil Knowledge & Medical Education Platform*
 
 ---
 
-## 📖 Overview | மேலோட்டம்
+## 📖 Overview
 
-**Zhagaram Trust (ழகரம் அறக்கட்டளை)** is a bilingual educational and medical repository dedicated to democratizing scientific, clinical, and medical pedagogy through the Tamil language.
-
-### 🌟 Key Highlights
-- **MBBS in Tamil (தொகுதி 1):** Landmark 540-page undergraduate medical curriculum textbook co-authored by 10 medical students and senior faculty professors.
-- **27 Video Lectures:** High-definition video lecture series demystifying human anatomy, physiology, and clinical diagnostics in Tamil.
-- **Pediatric Surgery Medical Dictionary:** Comprehensive clinical glossary coined and validated by the International Applied Tamil Team (IATT).
-- **Historic Medical Scholarship:** Scholarly monograph on King Serfoji II's surgical, anatomical, and ophthalmic innovations by Kalaimamani Dr. S. Narendran.
-- **Digital Archive & Media:** Open-access repository for research PDFs (Kanaiyazhi Journal, BNT), clinical protocols, symposium photo archives, and upcoming conferences (THIRAN 2026).
-- **Admin CMS Dashboard:** Dedicated content management interface for managing publications, media, documents, events, and community submissions.
+Zhagaram Trust is dedicated to rendering medicine, science, technology, and higher education accessible through the richness of the Tamil language. The platform hosts undergraduate MBBS curriculum materials in Tamil, standardized medical lexicons, video lecture series, digital journals, and academic conference resources.
 
 ---
 
-## 🚀 Tech Stack
-
-- **Framework:** React 19 + TypeScript
-- **Bundler:** Vite 8
-- **Styling:** Tailwind CSS v4 (with custom Tamil typography & editorial design system)
-- **Icons:** Lucide React
-- **Animations:** Motion
-- **Fonts:** Noto Sans Tamil, Noto Serif Tamil, Cormorant Garamond, Plus Jakarta Sans
-
----
-
-## 💻 Local Development Setup
+## 🚀 Getting Started
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (v18+ recommended)
+- [Node.js](https://nodejs.org/) (v18 or higher)
 - npm or yarn
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/LOGESHM-333/Zhagaram.git
-cd Zhagaram
-```
-
-### 2. Install Dependencies
+### 1. Install Dependencies
 ```bash
 npm install --legacy-peer-deps
 ```
 
-### 3. Start Development Server
+### 2. Run the Development Server
 ```bash
 npm run dev
 ```
-Open **[http://localhost:5173](http://localhost:5173)** in your browser.
+Open **http://localhost:5173/** in your browser.
 
-### 4. Build for Production
+### 3. Build for Production
 ```bash
 npm run build
 ```
 
 ---
 
-## 🏛️ Project Structure
+## 🏛️ Key Features
 
-```
-├── public/
-│   └── assets/           # Historical documents, PDFs, lecture videos, and illustrations
-├── src/
-│   ├── components/
-│   │   ├── common/       # Header, Footer, SearchModal, VisualAsset
-│   │   ├── home/         # Hero, Events, Publications, Videos, Documents, Gallery
-│   │   └── modals/       # Book details, PDF viewer, Video player, Lightbox
-│   ├── context/
-│   │   ├── LanguageContext.tsx  # Dynamic Tamil / English bilingual toggle
-│   │   └── DataContext.tsx      # State management with LocalStorage persistence & CRUD
-│   ├── data/             # Curated repository data (initialData.ts)
-│   ├── pages/            # Home, About, Publications, Documents, Videos, Images, Events, Contact, Admin
-│   ├── types/            # TypeScript type definitions
-│   ├── App.tsx           # Router & application layout
-│   └── main.tsx          # React application entry point
-├── package.json
-└── vite.config.ts
-```
+- **Bilingual Interface:** Instant seamless switching between Tamil (தமிழ்) and English (EN).
+- **MBBS in Tamil Milestone:** 27 complete lecture modules and textbooks co-authored by 10 medical students and senior faculty.
+- **Pediatric Surgery Dictionary:** Standardized clinical lexicography by the International Applied Tamil Team (IATT).
+- **Digital Archive & Document Viewer:** Integrated PDF viewer and downloader for journals such as *Kanaiyazhi* and scientific monographs.
+- **Video & Photo Repositories:** HD lecture series and photographic archives with lightbox viewing.
+- **Event Conclaves & Registration:** Direct scheduling and registration for statewide skill summits (e.g., THIRAN 2026).
+- **Admin Management Portal:** Dedicated content management interface for publications, events, documents, and community inquiries.
 
 ---
 
-## 📜 License & Acknowledgements
+## 📜 License & Trust Registration
 
-Created with pride for Tamil language scientific advancement and medical education.  
-*ழகரம் அறக்கட்டளை — அரசு ஓமந்தூரார் மருத்துவக் கல்லூரி வளாகம், சென்னை.*
+- **Registration Number:** `TN/CHN/TRUST/2018/4892`
+- **Campus Headquarters:** Govt. Omandurar Medical College Campus, Walajah Road, Chennai - 600002, Tamil Nadu, India.
