@@ -26,21 +26,21 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate, onOpen
 
   return (
     <header className="sticky top-0 z-40 bg-[#FAF8F5]/95 backdrop-blur-md border-b border-[#E8DFD5] transition-colors w-full">
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20 gap-2 sm:gap-3 xl:gap-4">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+        <div className="flex items-center justify-between h-14 sm:h-16 md:h-20 gap-1.5 sm:gap-3 xl:gap-4">
           
-          {/* ZONE 1: Brand Wordmark */}
+          {/* ZONE 1: Brand Wordmark (Compact on mobile so all controls fit) */}
           <button
             onClick={() => onNavigate('/')}
-            className="flex items-center gap-2 sm:gap-2.5 text-left focus:outline-hidden group shrink-0 min-w-0"
+            className="flex items-center gap-1.5 sm:gap-2 text-left focus:outline-hidden group shrink-0 min-w-0"
             aria-label="Zhagaram Trust Homepage"
           >
-            <TrustLogo size={32} className="sm:w-9 sm:h-9 transition-transform group-hover:scale-105 shrink-0" />
+            <TrustLogo size={28} className="sm:w-8 sm:h-8 transition-transform group-hover:scale-105 shrink-0" />
             <div className="flex flex-col min-w-0">
-              <span className="font-tamil-serif font-bold text-sm sm:text-base lg:text-lg text-[#132B20] tracking-tight leading-none group-hover:text-[#C85A32] transition-colors truncate">
+              <span className="font-tamil-serif font-bold text-xs sm:text-base lg:text-lg text-[#132B20] tracking-tight leading-none group-hover:text-[#C85A32] transition-colors truncate max-w-[125px] xs:max-w-[160px] sm:max-w-none">
                 {language === 'ta' ? 'ழகரம் அறக்கட்டளை' : 'Zhagaram Trust'}
               </span>
-              <span className="text-[10px] text-[#786E63] font-serif tracking-widest uppercase mt-0.5 whitespace-nowrap hidden sm:inline truncate">
+              <span className="text-[10px] text-[#786E63] font-serif tracking-widest uppercase mt-0.5 whitespace-nowrap hidden lg:inline truncate">
                 {language === 'ta' ? 'தமிழ் அறிவுக் களஞ்சியம்' : 'Tamil Knowledge Foundation'}
               </span>
             </div>
@@ -68,11 +68,11 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate, onOpen
           </nav>
 
           {/* ZONE 3: Utility Controls & Mobile Menu Toggle */}
-          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+          <div className="flex items-center gap-1 sm:gap-1.5 xl:gap-2 shrink-0">
             {/* Search Icon Trigger */}
             <button
               onClick={onOpenSearch}
-              className="p-1.5 sm:p-2 text-[#4A4036] hover:text-[#132B20] hover:bg-[#EFE7DE] rounded-sm transition-colors shrink-0"
+              className="p-1 sm:p-1.5 text-[#4A4036] hover:text-[#132B20] hover:bg-[#EFE7DE] rounded-sm transition-colors shrink-0"
               aria-label={t('தேடல்', 'Search')}
               title={t('வளங்களைத் தேடுக', 'Search resources')}
             >
@@ -82,38 +82,40 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate, onOpen
             {/* Language Switch Button */}
             <button
               onClick={toggleLanguage}
-              className="flex items-center px-2 sm:px-2.5 py-1 sm:py-1.5 border border-[#D5C9BD] hover:border-[#C85A32] rounded-sm text-xs font-semibold text-[#132B20] bg-white/80 hover:bg-white transition-all whitespace-nowrap shadow-2xs shrink-0"
+              className="flex items-center px-1.5 sm:px-2 py-0.5 sm:py-1 border border-[#D5C9BD] hover:border-[#C85A32] rounded-sm text-[11px] sm:text-xs font-semibold text-[#132B20] bg-white/80 hover:bg-white transition-all whitespace-nowrap shadow-2xs shrink-0"
               aria-label="Toggle Tamil and English"
               title={language === 'ta' ? 'Switch to English' : 'தமிழுக்கு மாறவும்'}
             >
               <span className={language === 'ta' ? 'text-[#C85A32] font-bold' : 'text-[#786E63]'}>தமிழ்</span>
-              <span className="mx-0.5 sm:mx-1 text-[#A89C8E]">/</span>
+              <span className="mx-0.5 text-[#A89C8E]">/</span>
               <span className={language === 'en' ? 'text-[#C85A32] font-bold' : 'text-[#786E63]'}>EN</span>
             </button>
 
-            {/* Admin CMS Access Link - Explicitly visible on desktop/tablet as 'நிர்வாகி' */}
+            {/* Admin CMS Access Link - Visible on mobile (icon) and desktop (icon + text) */}
             <button
               onClick={() => onNavigate('/admin')}
-              className={`hidden md:flex p-1.5 sm:px-2.5 sm:py-1.5 border rounded-sm transition-colors text-xs items-center gap-1.5 whitespace-nowrap shrink-0 font-semibold shadow-2xs ${
+              className={`flex items-center gap-1 p-1 sm:px-2 sm:py-1 border rounded-sm transition-colors text-xs font-semibold whitespace-nowrap shrink-0 shadow-2xs ${
                 currentRoute === '/admin'
                   ? 'border-[#C85A32] bg-[#C85A32] text-white shadow-xs'
                   : 'border-[#D5C9BD] bg-white/80 hover:bg-white text-[#132B20] hover:border-[#C85A32]'
               }`}
+              aria-label={language === 'ta' ? 'நிர்வாகி' : 'Admin'}
               title={language === 'ta' ? 'நிர்வாகி பலகை' : 'Admin Portal'}
             >
               <Shield className="w-3.5 h-3.5 text-[#C85A32]" />
-              <span className="font-semibold text-xs">
+              <span className="hidden sm:inline font-semibold text-xs">
                 {language === 'ta' ? 'நிர்வாகி' : 'Admin'}
               </span>
             </button>
 
-            {/* Mobile / Tablet Hamburger Menu Toggle */}
+            {/* Three Navigation Bar (Hamburger Menu ☰) - Always visible on mobile/tablet */}
             <button
               onClick={() => setMobileMenuOpen(prev => !prev)}
-              className="xl:hidden p-1.5 sm:p-2 text-[#4A4036] hover:text-[#132B20] hover:bg-[#EFE7DE] rounded-sm shrink-0 transition-colors"
-              aria-label="Toggle menu"
+              className="xl:hidden p-1 sm:p-1.5 text-[#4A4036] hover:text-[#132B20] hover:bg-[#EFE7DE] rounded-sm shrink-0 transition-colors"
+              aria-label="Toggle navigation menu"
+              title="பட்டி (Menu)"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 text-[#C85A32]" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
