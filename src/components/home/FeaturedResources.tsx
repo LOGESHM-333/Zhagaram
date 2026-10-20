@@ -104,7 +104,7 @@ export const FeaturedResources: React.FC<FeaturedResourcesProps> = ({ onNavigate
               <div
                 key={card.type}
                 onClick={() => onNavigate(card.route)}
-                className={`bg-white border border-[#E5DCD0] rounded-sm p-6 flex flex-col justify-between cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${card.borderHover} group`}
+                className={`bg-white border border-[#E5DCD0] rounded-sm p-6 flex flex-col justify-between cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${card.borderHover} group min-w-0 overflow-hidden`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">

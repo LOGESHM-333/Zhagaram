@@ -45,7 +45,7 @@ export const EventsPage: React.FC = () => {
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex items-center gap-2 mb-8 border-b border-[#E5DCD0] pb-4">
+        <div className="flex flex-wrap items-center gap-2 mb-8 border-b border-[#E5DCD0] pb-4">
           <button
             onClick={() => setFilter('all')}
             className={`px-4 py-2 text-xs font-semibold rounded-sm transition-colors ${
