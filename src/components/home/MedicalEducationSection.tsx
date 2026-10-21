@@ -11,7 +11,6 @@ export const MedicalEducationSection: React.FC<MedicalEducationSectionProps> = (
 
   const playlistUrl = 'https://youtube.com/playlist?list=PLqAGZgQ8AD2sxSFrSfhbHKMOjjxZ6CrHG';
   const realBookPhoto = '/assets/aistudio/WhatsApp_Image_2026-10-20_at_1.07.57_PM_9e5db21a.jpeg';
-  const playlistBanner = '/assets/aistudio/Screenshot_2026-10-20_142324_4a87fd7c.png';
 
   return (
     <section className="py-20 md:py-28 bg-[#0F2219] text-white relative overflow-hidden">
@@ -49,14 +48,6 @@ export const MedicalEducationSection: React.FC<MedicalEducationSectionProps> = (
           {/* Left: Video Player Spotlight Card with Official Screenshot Header */}
           <div className="lg:col-span-7 min-w-0 bg-[#152F23] border border-[#2B5440] rounded-sm p-6 md:p-8 shadow-xl">
             
-            {/* Real Playlist Banner Thumbnail */}
-            <div className="mb-4 rounded-sm overflow-hidden border border-[#2B5440] bg-black">
-              <img
-                src={playlistBanner}
-                alt="MBBS in Tamil - 27 Videos Listed"
-                className="w-full h-auto max-h-48 object-contain mx-auto"
-              />
-            </div>
 
             <div className="relative aspect-[16/9] bg-black rounded-sm overflow-hidden mb-6 border border-[#2B5440]">
               <iframe

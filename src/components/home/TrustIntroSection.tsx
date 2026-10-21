@@ -43,13 +43,21 @@ export const TrustIntroSection: React.FC<TrustIntroSectionProps> = ({ onNavigate
               </p>
             </div>
 
-            <div className="mt-8">
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <button
                 onClick={() => onNavigate('/about')}
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#132B20] hover:bg-[#1E3E2F] text-white text-xs font-semibold rounded-sm transition-colors"
               >
                 <span>{t('முழு வரலாற்றைப் படிக்க', 'Read Full Mission & History')}</span>
                 <ArrowRight className="w-4 h-4" />
+              </button>
+
+              <button
+                onClick={() => onNavigate('/about')}
+                className="inline-flex items-center gap-2 px-4 py-2.5 bg-white hover:bg-[#FAF8F5] border border-[#DDD3C7] hover:border-[#C85A32] text-[#132B20] hover:text-[#C85A32] text-xs font-semibold rounded-sm transition-all shadow-2xs"
+              >
+                <Award className="w-4 h-4 text-[#C85A32]" />
+                <span>{t('வழிகாட்டும் புரவலர் பெருமக்கள் (Patrons)', 'Our Guiding Patrons')}</span>
               </button>
             </div>
           </div>

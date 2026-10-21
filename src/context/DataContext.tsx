@@ -101,7 +101,10 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [videos, setVideos] = useState<VideoItem[]>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEYS.VIDEOS);
-      return saved ? JSON.parse(saved) : initialVideos;
+      if (!saved) return initialVideos;
+      const parsed: VideoItem[] = JSON.parse(saved);
+      const missing = initialVideos.filter(iv => !parsed.some(pv => pv.id === iv.id));
+      return missing.length > 0 ? [...missing, ...parsed] : parsed;
     } catch {
       return initialVideos;
     }
@@ -110,7 +113,10 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [images, setImages] = useState<ImageItem[]>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEYS.IMAGES);
-      return saved ? JSON.parse(saved) : initialImages;
+      if (!saved) return initialImages;
+      const parsed: ImageItem[] = JSON.parse(saved);
+      const missing = initialImages.filter(ii => !parsed.some(pi => pi.id === ii.id));
+      return missing.length > 0 ? [...missing, ...parsed] : parsed;
     } catch {
       return initialImages;
     }

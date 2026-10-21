@@ -1,5 +1,4 @@
-import React from 'react';
-import { Target, BookOpen, HeartPulse, GraduationCap, CheckCircle2, ShieldCheck, Mail, MapPin } from 'lucide-react';
+import { Target, BookOpen, HeartPulse, GraduationCap, CheckCircle2, ShieldCheck, Mail, MapPin, Sparkles, Award, Globe, Youtube, FileText, ExternalLink, Linkedin } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { useData } from '../context/DataContext';
 import { TrustLogo, BookCoverGraphic } from '../components/common/VisualAsset';
@@ -131,6 +130,471 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             </div>
           </div>
         </div>
+        {/* Patrons Section */}
+        <section id="patron" className="mb-16 scroll-mt-24 space-y-8">
+          <div className="text-center max-w-3xl mx-auto mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#C85A32] text-white rounded-xs text-xs font-semibold uppercase tracking-wider mb-3 shadow-2xs">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>{t('அறக்கட்டளையின் வழிகாட்டும் புரவலர் பெருமக்கள்', 'Patrons & Guiding Luminaries')}</span>
+            </div>
+            <h2 className="font-tamil-serif text-2xl sm:text-3xl font-bold text-[#132B20]">
+              {t('தாய்மொழி வழி மருத்துவக் கல்விக்கு வழிகாட்டும் பெருந்தகைகள்', 'Eminent Mentors Guiding Tamil Medical Education')}
+            </h2>
+            <p className="text-xs sm:text-sm text-[#4A4036] mt-2 font-tamil-sans">
+              {t(
+                'ழகரம் அறக்கட்டளையின் மருத்துவத் தமிழ்ப் பாடத்திட்டம், அறிவியல் மொழிபெயர்ப்பு மற்றும் கலைச்சொல்லாக்கப் பணிகளுக்கு முன்னோடிகளாக விளங்கி நல்வழிகாட்டும் புரவலர் பெருமக்கள்.',
+                'Distinguished mentors whose lifetime devotion to clinical excellence and scientific Tamil illuminates the path of Zhagaram Trust.'
+              )}
+            </p>
+          </div>
+
+          {/* Patron 1: Dr. S. Narendran */}
+          <div className="relative overflow-hidden rounded-sm bg-gradient-to-br from-[#12261C] via-[#1A382B] to-[#0F1E16] border-2 border-[#E5A086]/50 p-6 sm:p-8 lg:p-10 shadow-xl">
+            {/* Decorative watermark icon */}
+            <div className="absolute -right-8 -bottom-8 text-white/[0.03] pointer-events-none select-none">
+              <GraduationCap className="w-72 h-72" />
+            </div>
+
+            <div className="relative z-10">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+                
+                {/* Photo & Quick Badges Column */}
+                <div className="lg:col-span-4 flex flex-col items-center text-center">
+                  <div className="relative w-48 sm:w-56 aspect-[4/5] rounded-sm overflow-hidden border-2 border-[#E5A086]/70 shadow-2xl bg-[#0B1711] group">
+                    <img
+                      src="/assets/patron/patron-narendran.jpg"
+                      alt={language === 'ta' ? 'புரவலர் மரு. சு. நரேந்திரன்' : 'Patron Dr. S. Narendran'}
+                      className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-103"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute bottom-2.5 left-2.5 right-2.5 text-center">
+                      <span className="text-[11px] font-serif text-[#F4EFEB] tracking-wide block">
+                        {t('தஞ்சாவூர்', 'Thanjavur')}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Kalaimamani Honor Ribbon */}
+                  <div className="mt-3.5 inline-flex items-center gap-1.5 px-3 py-1 bg-amber-400/15 border border-amber-300/30 text-amber-200 text-xs font-medium rounded-xs">
+                    <Award className="w-4 h-4 text-amber-300 shrink-0" />
+                    <span>{t('கலைமாமணி விருது (2010)', 'Kalaimamani Award (2010)')}</span>
+                  </div>
+                </div>
+
+                {/* Narrative & Links Column */}
+                <div className="lg:col-span-8 min-w-0">
+                  <div className="inline-block px-2.5 py-0.5 bg-white/10 text-emerald-200 text-[11px] font-semibold uppercase tracking-wider rounded-xs mb-2">
+                    {t('முதன்மைப் புரவலர்', 'Chief Patron')}
+                  </div>
+                  <h3 className="font-tamil-serif text-2xl sm:text-3xl font-bold text-white leading-tight mb-2">
+                    {t('மருத்துவத் தமிழ்ச் செம்மல் மரு. சு. நரேந்திரன், MS, FICS', 'Medical Tamil Scholar Dr. S. Narendran, MS, FICS')}
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-[#E5A086] font-semibold mb-4">
+                    {t(
+                      'முன்னாள் அறுவை சிகிச்சை பேராசிரியர், தஞ்சை மருத்துவக் கல்லூரி | 37-க்கும் மேற்பட்ட தேசிய & மாநில விருதுகள்',
+                      'Former Professor of Surgery, Thanjavur Medical College | 37+ National & State Honours'
+                    )}
+                  </p>
+
+                  <p className="text-xs sm:text-sm text-[#D1E0D7] leading-relaxed mb-4 font-tamil-sans">
+                    {t(
+                      '1970 முதல் 2000 வரை தொடர்ந்து 30 ஆண்டுகள் அரசு மருத்துவக் கல்லூரியில் அறுவை சிகிச்சை பேராசிரியராகப் பணியாற்றி, நோயாளிகளுக்கு அருந்தொண்டாற்றியதோடு பலநூறு மருத்துவ மாணவர்களுக்கும் செவிலியர்களுக்கும் மருத்துவப் பாடம் புகட்டியவர். எளிய மக்களுக்கும் மாணவர்களுக்கும் தாய்மொழியில் அறிவியல் மற்றும் மருத்துவ அறிவைக் கொண்டு சேர்க்கும் ழகரம் அறக்கட்டளையின் வழிகாட்டும் கலங்கரை விளக்கமாகத் திகழ்கிறார்.',
+                      'A veteran surgical professor who dedicated over 30 years (1970–2000) to clinical care and teaching at Government Medical Colleges, training generations of doctors and nurses. He serves as the guiding beacon for Zhagaram Trust in demystifying healthcare and medical science in Tamil.'
+                    )}
+                  </p>
+
+                  {/* Highlights Grid */}
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 my-5">
+                    <div className="p-2.5 bg-white/5 border border-white/10 rounded-xs text-center">
+                      <span className="block text-xl font-bold text-[#E5A086]">30+</span>
+                      <span className="text-[11px] text-[#A6B8AC]">
+                        {t('மருத்துவ நூல்கள்', 'Medical Books')}
+                      </span>
+                    </div>
+                    <div className="p-2.5 bg-white/5 border border-white/10 rounded-xs text-center">
+                      <span className="block text-xl font-bold text-[#E5A086]">30</span>
+                      <span className="text-[11px] text-[#A6B8AC]">
+                        {t('ஆண்டுகள் அரசு பணி', 'Years in Surgery')}
+                      </span>
+                    </div>
+                    <div className="p-2.5 bg-white/5 border border-white/10 rounded-xs text-center">
+                      <span className="block text-xl font-bold text-[#E5A086]">37+</span>
+                      <span className="text-[11px] text-[#A6B8AC]">
+                        {t('விருதுகள் & பட்டங்கள்', 'Awards & Honors')}
+                      </span>
+                    </div>
+                    <div className="p-2.5 bg-white/5 border border-white/10 rounded-xs text-center">
+                      <span className="block text-xl font-bold text-[#E5A086]">130+</span>
+                      <span className="text-[11px] text-[#A6B8AC]">
+                        {t('மருத்துவ உரைகள்', 'Clinical Lectures')}
+                      </span>
+                    </div>
+                  </div>
+
+                  <p className="text-xs text-[#B3C7BB] leading-relaxed mb-5 italic font-serif">
+                    {t(
+                      'தமிழக அரசின் சிறந்த நூல் விருது பெற்ற "நோயை வெல்வோம்" (1985), தமிழ்ப் பல்கலைக்கழகத்தின் "பொது அறுவை மருத்துவம்", "இரத்த தானம், உடல் உறுப்பு தானம்" உள்ளிட்ட முன்னோடி மருத்துவப் படைப்புகளின் ஆசிரியர்.',
+                      'Author of seminal Tamil medical treatises including Tamil Nadu State Award-winning "Noyai Velvom" (1985), "General Surgery" (Tamil University), and "Organ Donation".'
+                    )}
+                  </p>
+
+                  {/* Links from Document */}
+                  <div className="flex flex-wrap items-center gap-2.5 pt-4 border-t border-white/15">
+                    {/* 1. Wikipedia Link */}
+                    <a
+                      href="https://ta.wikipedia.org/wiki/%E0%AE%9A%E0%AF%81._%E0%AE%A8%E0%AE%B0%E0%AF%87%E0%AE%A8%E0%AF%8D%E0%AE%A4%E0%AE%BF%E0%AE%B0%E0%AE%A9%E0%AF%8D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xs text-xs font-semibold text-white transition-all shadow-2xs"
+                      title="Wikipedia Profile of Dr. S. Narendran"
+                    >
+                      <Globe className="w-3.5 h-3.5 text-sky-400" />
+                      <span>{t('விக்கிப்பீடியா பக்கம்', 'Wikipedia Profile')}</span>
+                      <ExternalLink className="w-3 h-3 text-white/70" />
+                    </a>
+
+                    {/* 2. YouTube Video Link */}
+                    <a
+                      href="https://youtu.be/9VvInopc7pM?si=kNPXPsIPqPKnijIk"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-red-600/90 hover:bg-red-600 border border-red-500 rounded-xs text-xs font-semibold text-white transition-all shadow-2xs"
+                      title="Watch Dr. S. Narendran Discourse on YouTube"
+                    >
+                      <Youtube className="w-3.5 h-3.5 text-white" />
+                      <span>{t('மருத்துவ உரை (YouTube)', 'Watch on YouTube')}</span>
+                      <ExternalLink className="w-3 h-3 text-white/70" />
+                    </a>
+
+                    {/* 3. HTML Page Link (Dr. Mu. Elangovan Blog Feature) */}
+                    <a
+                      href="https://muelangovan.blogspot.com/2015/03/blog-post_18.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xs text-xs font-semibold text-white transition-all shadow-2xs"
+                      title="Read Documented Biography by Dr. Mu. Elangovan"
+                    >
+                      <FileText className="w-3.5 h-3.5 text-amber-300" />
+                      <span>{t('வாழ்க்கைக் குறிப்பு (HTML கட்டுரை)', 'Biography Article (HTML)')}</span>
+                      <ExternalLink className="w-3 h-3 text-white/70" />
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          {/* Patron 2: Prof. Dr. Semmal Manavai Mustafa */}
+          <div className="relative overflow-hidden rounded-sm bg-gradient-to-br from-[#12261C] via-[#1A382B] to-[#0F1E16] border-2 border-[#E5A086]/50 p-6 sm:p-8 lg:p-10 shadow-xl">
+            {/* Decorative watermark icon */}
+            <div className="absolute -right-8 -bottom-8 text-white/[0.03] pointer-events-none select-none">
+              <BookOpen className="w-72 h-72" />
+            </div>
+
+            <div className="relative z-10">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+                
+                {/* Photo & Quick Badges Column */}
+                <div className="lg:col-span-4 flex flex-col items-center text-center">
+                  <div className="relative w-48 sm:w-56 aspect-[4/5] rounded-sm overflow-hidden border-2 border-[#E5A086]/70 shadow-2xl bg-[#0B1711] group">
+                    <img
+                      src="/assets/patron/patron-semmal.jpg"
+                      alt={language === 'ta' ? 'புரவலர் பேராசிரியர் மரு. செம்மல் மணவை முஸ்தபா' : 'Patron Prof. Dr. Semmal Manavai Mustafa'}
+                      className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-103"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute bottom-2.5 left-2.5 right-2.5 text-center">
+                      <span className="text-[11px] font-serif text-[#F4EFEB] tracking-wide block">
+                        {t('சவுதி அரேபியா / சென்னை', 'Shaqra, KSA / Chennai')}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Heritage Ribbon */}
+                  <div className="mt-3.5 inline-flex items-center gap-1.5 px-3 py-1 bg-amber-400/15 border border-amber-300/30 text-amber-200 text-xs font-medium rounded-xs text-center">
+                    <Award className="w-4 h-4 text-amber-300 shrink-0" />
+                    <span>{t('அறிவியல் தமிழ்த் தந்தை மணவை முஸ்தபா புதல்வர்', 'Son of Scientific Tamil Pioneer Manavai Mustafa')}</span>
+                  </div>
+                </div>
+
+                {/* Narrative & Links Column */}
+                <div className="lg:col-span-8 min-w-0">
+                  <div className="inline-block px-2.5 py-0.5 bg-white/10 text-emerald-200 text-[11px] font-semibold uppercase tracking-wider rounded-xs mb-2">
+                    {t('புரவலர் & அறிவியல் ஆலோசகர்', 'Patron & Chief Scientific Advisor')}
+                  </div>
+                  <h3 className="font-tamil-serif text-2xl sm:text-3xl font-bold text-white leading-tight mb-2">
+                    {t('பேராசிரியர் மரு. செம்மல் மணவை முஸ்தபா, MBBS', 'Prof. Dr. Semmal Manavai Mustafa, MBBS')}
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-[#E5A086] font-semibold mb-4">
+                    {t(
+                      'மருத்துவக் கல்விப் பேராசிரியர், ஷக்ரா பல்கலைக்கழகம் (சவுதி அரேபியா) | முன்னாள் உடலியங்கியல் இணைப் பேராசிரியர், ஸ்ரீ ராமச்சந்திரா பல்கலைக்கழகம்',
+                      'Professor of Medical Education, Shaqra University, KSA | Former Assoc. Prof of Physiology, Sri Ramachandra University'
+                    )}
+                  </p>
+
+                  <p className="text-xs sm:text-sm text-[#D1E0D7] leading-relaxed mb-4 font-tamil-sans">
+                    {t(
+                      'சென்னை ஸ்டான்லி மருத்துவக் கல்லூரியின் முன்னாள் மாணவரான (MBBS, 1995) மரு. செம்மல் அவர்கள், 29 ஆண்டுகளுக்கும் மேலான சர்வதேச மருத்துவ, கல்வி மற்றும் உடலியங்கியல் கற்பித்தல் அனுபவம் கொண்டவர். மணவை முஸ்தபா அறிவியல் தமிழ் அறக்கட்டளையின் நிர்வாக இயக்குநராகவும், சர்வதேச பயன்பாட்டுத் தமிழ் இணையக் குழுமம் & ஆவணகத்தின் (The Tamil Archives) தலைமை அறிவியல் ஆலோசகராகவும் செயல்படுகிறார். பழந்தமிழ் இலக்கியக் கோட்பாடுகளைக் கொண்டு நவீன மருத்துவக் கல்வியைக் கற்பிக்கும் முன்னோடி கல்வி ஆய்வு முறையை (Philocine) உலக அரங்கில் முன்னெடுத்து வருகிறார்.',
+                      'An alumnus of Govt. Stanley Medical College (MBBS, 1995) with over 29 years of clinical and academic teaching excellence across physiology and medical education. Managing Director of the Manavai Mustafa Scientific Tamil Foundation and Chief Scientific Advisor of The Tamil Archives, he pioneers integrating classical Tamil literature with modern clinical learning.'
+                    )}
+                  </p>
+
+                  {/* Highlights Grid */}
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 my-5">
+                    <div className="p-2.5 bg-white/5 border border-white/10 rounded-xs text-center">
+                      <span className="block text-xl font-bold text-[#E5A086]">29+</span>
+                      <span className="text-[11px] text-[#A6B8AC]">
+                        {t('ஆண்டுகள் மருத்துவப் பணி', 'Years in Medicine')}
+                      </span>
+                    </div>
+                    <div className="p-2.5 bg-white/5 border border-white/10 rounded-xs text-center">
+                      <span className="block text-lg font-bold text-[#E5A086] truncate">ஷக்ரா</span>
+                      <span className="text-[11px] text-[#A6B8AC]">
+                        {t('பல்கலைக்கழகப் பேராசிரியர்', 'Prof. Shaqra Univ')}
+                      </span>
+                    </div>
+                    <div className="p-2.5 bg-white/5 border border-white/10 rounded-xs text-center">
+                      <span className="block text-lg font-bold text-[#E5A086] truncate">மணவை</span>
+                      <span className="text-[11px] text-[#A6B8AC]">
+                        {t('அறக்கட்டளை இயக்குநர்', 'Tamil Foundation')}
+                      </span>
+                    </div>
+                    <div className="p-2.5 bg-white/5 border border-white/10 rounded-xs text-center">
+                      <span className="block text-lg font-bold text-[#E5A086] truncate">பழந்தமிழ்</span>
+                      <span className="text-[11px] text-[#A6B8AC]">
+                        {t('மருத்துவக் கல்வி ஆய்வு', 'Ancient Medicine')}
+                      </span>
+                    </div>
+                  </div>
+
+                  <p className="text-xs text-[#B3C7BB] leading-relaxed mb-5 italic font-serif">
+                    {t(
+                      '"10,000 ஆண்டுகளுக்கு முன்னரே ஆதி மனிதன் மூளை பற்றி என்ன அறிவான்?" மற்றும் "பழந்தமிழ் இலக்கியங்கள் வழி மருத்துவக் கல்வி கற்பித்தல்" ஆகிய தலைப்புகளில் உலகளாவிய ஆய்வுரைகளையும் விழிப்புணர்வுக் காணொளிகளையும் வழங்கி வருபவர்.',
+                      'Key contributor of acclaimed studies and discourses on ancient neurological insights and imparting health sciences through classical Tamil heritage.'
+                    )}
+                  </p>
+
+                  {/* Links from Document */}
+                  <div className="flex flex-wrap items-center gap-2.5 pt-4 border-t border-white/15">
+                    {/* 1. LinkedIn Link */}
+                    <a
+                      href="https://www.linkedin.com/in/appliedtamil/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#0077B5]/90 hover:bg-[#0077B5] border border-sky-400/50 rounded-xs text-xs font-semibold text-white transition-all shadow-2xs"
+                      title="LinkedIn Profile of Prof. Dr. Semmal"
+                    >
+                      <Linkedin className="w-3.5 h-3.5 text-white" />
+                      <span>{t('LinkedIn பக்கம்', 'LinkedIn Profile')}</span>
+                      <ExternalLink className="w-3 h-3 text-white/70" />
+                    </a>
+
+                    {/* 2. YouTube Video 1: Ancient Tamil Medical Education */}
+                    <a
+                      href="https://youtu.be/zQNvd3U3xds?si=wj4eRbYKUsXoTZlH"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-red-600/90 hover:bg-red-600 border border-red-500 rounded-xs text-xs font-semibold text-white transition-all shadow-2xs"
+                      title="Watch Discourse on Imparting Medical Education using Ancient Tamil Works"
+                    >
+                      <Youtube className="w-3.5 h-3.5 text-white" />
+                      <span>{t('பழந்தமிழ் & மருத்துவம் (YouTube)', 'Ancient Tamil & Medicine (YouTube)')}</span>
+                      <ExternalLink className="w-3 h-3 text-white/70" />
+                    </a>
+
+                    {/* 3. YouTube Video 2: Ancient Man & Brain Knowledge */}
+                    <a
+                      href="https://youtu.be/MMh6dQyxqsE?si=pTucxnsu-SBZq39I"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-red-600/90 hover:bg-red-600 border border-red-500 rounded-xs text-xs font-semibold text-white transition-all shadow-2xs"
+                      title="Watch Discourse on 10,000 Years Ago: Ancient Man & Brain Knowledge"
+                    >
+                      <Youtube className="w-3.5 h-3.5 text-white" />
+                      <span>{t('ஆதி மனிதனும் மூளையும் (YouTube)', 'Brain Evolution Discourse (YouTube)')}</span>
+                      <ExternalLink className="w-3 h-3 text-white/70" />
+                    </a>
+
+                    {/* 4. The Tamil Archives Website */}
+                    <a
+                      href="http://www.tamilarchives.org"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xs text-xs font-semibold text-white transition-all shadow-2xs"
+                      title="Visit The Tamil Archives"
+                    >
+                      <Globe className="w-3.5 h-3.5 text-sky-400" />
+                      <span>{t('தமிழ் ஆவணகம் (இணையதளம்)', 'The Tamil Archives')}</span>
+                      <ExternalLink className="w-3 h-3 text-white/70" />
+                    </a>
+
+                    {/* 5. Email */}
+                    <a
+                      href="mailto:thetamilarchives@gmail.com"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xs text-xs font-semibold text-white transition-all shadow-2xs"
+                      title="Email The Tamil Archives"
+                    >
+                      <Mail className="w-3.5 h-3.5 text-amber-300" />
+                      <span>{t('மின்னஞ்சல்', 'Email')}</span>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          {/* Patron 3: Dr. M. Arulpitchai Narayanan */}
+          <div className="relative overflow-hidden rounded-sm bg-gradient-to-br from-[#12261C] via-[#1A382B] to-[#0F1E16] border-2 border-[#E5A086]/50 p-6 sm:p-8 lg:p-10 shadow-xl">
+            {/* Decorative watermark icon */}
+            <div className="absolute -right-8 -bottom-8 text-white/[0.03] pointer-events-none select-none">
+              <ShieldCheck className="w-72 h-72" />
+            </div>
+
+            <div className="relative z-10">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+                
+                {/* Photo & Quick Badges Column */}
+                <div className="lg:col-span-4 flex flex-col items-center text-center">
+                  <div className="relative w-48 sm:w-56 aspect-[4/5] rounded-sm overflow-hidden border-2 border-[#E5A086]/70 shadow-2xl bg-[#0B1711] group">
+                    <img
+                      src="/assets/patron/patron-arulpitchai.jpg"
+                      alt={language === 'ta' ? 'புரவலர் மரு. மு. அருள்பிச்சை நாராயணன்' : 'Patron Dr. M. Arulpitchai Narayanan'}
+                      className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-103"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute bottom-2.5 left-2.5 right-2.5 text-center">
+                      <span className="text-[11px] font-serif text-[#F4EFEB] tracking-wide block">
+                        {t('சென்னை (MMC)', 'Chennai (MMC)')}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* MMC Alumni Ribbon */}
+                  <div className="mt-3.5 inline-flex items-center gap-1.5 px-3 py-1 bg-amber-400/15 border border-amber-300/30 text-amber-200 text-xs font-medium rounded-xs text-center">
+                    <Award className="w-4 h-4 text-amber-300 shrink-0" />
+                    <span>{t('செயலாளர், சென்னை மருத்துவக் கல்லூரி முன்னாள் மாணவர் சங்கம்', 'Secretary, MMC Alumni Association')}</span>
+                  </div>
+                </div>
+
+                {/* Narrative & Links Column */}
+                <div className="lg:col-span-8 min-w-0">
+                  <div className="inline-block px-2.5 py-0.5 bg-white/10 text-emerald-200 text-[11px] font-semibold uppercase tracking-wider rounded-xs mb-2">
+                    {t('புரவலர் & மருத்துவ ஆலோசகர்', 'Patron & Medical Advisor')}
+                  </div>
+                  <h3 className="font-tamil-serif text-2xl sm:text-3xl font-bold text-white leading-tight mb-2">
+                    {t('மருத்துவ அறிஞர் மரு. மு. அருள்பிச்சை நாராயணன், MS', 'Medical Scholar Dr. M. Arulpitchai Narayanan, MS')}
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-[#E5A086] font-semibold mb-4">
+                    {t(
+                      'முன்னாள் முதல்வர் & அறுவை சிகிச்சை பேராசிரியர், சென்னை மருத்துவக் கல்லூரி (MMC) | தலைவர், ஆர்மா மருத்துவ அறக்கட்டளை',
+                      'Former Dean & Professor of Surgery, Madras Medical College (MMC) | Chairman, Arma Medical Foundation'
+                    )}
+                  </p>
+
+                  <p className="text-xs sm:text-sm text-[#D1E0D7] leading-relaxed mb-4 font-tamil-sans">
+                    {t(
+                      'சென்னை மருத்துவக் கல்லூரியின் (Madras Medical College - MMC) முன்னாள் மாணவரும், அங்கு அறுவை சிகிச்சை துறையின் பேராசிரியராகவும் முதல்வராகவும் (Dean) பணியாற்றி பல்லாயிரக்கணக்கான எளிய மக்களுக்கு அருந்தொண்டாற்றிய மூத்த அறுவை சிகிச்சை நிபுணர். சென்னை மருத்துவக் கல்லூரி முன்னாள் மாணவர் சங்கத்தின் (Alumni Association of MMC) செயலாளராகவும், 1993 முதல் மக்கள் நலப்பணியாற்றி வரும் ஆர்மா மருத்துவ அறக்கட்டளையின் (Arma Medical Foundation) தலைவராகவும் இயங்கி வருகிறார். உலக மறுவாழ்வு நிதி (WRF), உலக சுகாதார அமைப்பின் (WHO) திட்டங்கள் மற்றும் "ARMA Medical Practitioner" மருத்துவ இதழ் வாயிலாகத் தாய்மொழியில் மருத்துவ விழிப்புணர்வையும் மாணவர்களுக்கான வழிகாட்டலையும் முன்னெடுத்து வரும் ழகரத்தின் வழிகாட்டும் புரவலர்.',
+                      'A veteran surgeon, clinical educator, and administrator who served as Professor of Surgery and Dean at the historic Madras Medical College (MMC). He currently serves as Secretary of the MMC Alumni Association and Chairman of the Arma Medical Foundation (active since 1993). Championing public health through the World Rehabilitation Fund (WRF), WHO Healthy City initiatives, and medical journalism, he provides authoritative guidance to Zhagaram Trust.'
+                    )}
+                  </p>
+
+                  {/* Highlights Grid */}
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 my-5">
+                    <div className="p-2.5 bg-white/5 border border-white/10 rounded-xs text-center">
+                      <span className="block text-xl font-bold text-[#E5A086]">35+</span>
+                      <span className="text-[11px] text-[#A6B8AC]">
+                        {t('ஆண்டுகள் அறுவை சிகிச்சை', 'Years in Surgery')}
+                      </span>
+                    </div>
+                    <div className="p-2.5 bg-white/5 border border-white/10 rounded-xs text-center">
+                      <span className="block text-lg font-bold text-[#E5A086] truncate">MMC</span>
+                      <span className="text-[11px] text-[#A6B8AC]">
+                        {t('முன்னாள் முதல்வர் & செயலர்', 'Former Dean & Secretary')}
+                      </span>
+                    </div>
+                    <div className="p-2.5 bg-white/5 border border-white/10 rounded-xs text-center">
+                      <span className="block text-lg font-bold text-[#E5A086] truncate">ARMA</span>
+                      <span className="text-[11px] text-[#A6B8AC]">
+                        {t('மருத்துவ அறக்கட்டளை', 'Arma Foundation')}
+                      </span>
+                    </div>
+                    <div className="p-2.5 bg-white/5 border border-white/10 rounded-xs text-center">
+                      <span className="block text-lg font-bold text-[#E5A086] truncate">WRF</span>
+                      <span className="text-[11px] text-[#A6B8AC]">
+                        {t('மறுவாழ்வு & பொதுநலம்', 'Rehabilitation / WRF')}
+                      </span>
+                    </div>
+                  </div>
+
+                  <p className="text-xs text-[#B3C7BB] leading-relaxed mb-5 italic font-serif">
+                    {t(
+                      'சென்னை மருத்துவக் கல்லூரியின் 180+ ஆண்டுகால வரலாற்றுப் பாரம்பரியத்தைப் பாதுகாத்தல், மருத்துவச் சட்டங்கள் மற்றும் மருத்துவக் கல்வி சீரமைப்பு குறித்த வழிகாட்டல்களைத் தொடர்ச்சியாக வழங்கி வருபவர்.',
+                      'A tireless advocate for institutional heritage preservation at MMC, medical jurisprudence reforms, and vernacular medical literature accessibility.'
+                    )}
+                  </p>
+
+                  {/* Links */}
+                  <div className="flex flex-wrap items-center gap-2.5 pt-4 border-t border-white/15">
+                    {/* 1. MMC Alumni Association Website */}
+                    <a
+                      href="https://www.alumnimmc.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xs text-xs font-semibold text-white transition-all shadow-2xs"
+                      title="Visit MMC Alumni Association Website"
+                    >
+                      <Globe className="w-3.5 h-3.5 text-sky-400" />
+                      <span>{t('சென்னை மருத்துவக் கல்லூரி சங்கம் (MMC)', 'MMC Alumni Association')}</span>
+                      <ExternalLink className="w-3 h-3 text-white/70" />
+                    </a>
+
+                    {/* 2. Arma Medical Foundation Website */}
+                    <a
+                      href="http://armafoundation.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xs text-xs font-semibold text-white transition-all shadow-2xs"
+                      title="Visit Arma Medical Foundation"
+                    >
+                      <Globe className="w-3.5 h-3.5 text-emerald-400" />
+                      <span>{t('ஆர்மா மருத்துவ அறக்கட்டளை', 'Arma Medical Foundation')}</span>
+                      <ExternalLink className="w-3 h-3 text-white/70" />
+                    </a>
+
+                    {/* 3. News & Media Coverage on The Hindu */}
+                    <a
+                      href="https://www.thehindu.com/news/cities/chennai/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xs text-xs font-semibold text-white transition-all shadow-2xs"
+                      title="Medical Heritage and Media Mentions"
+                    >
+                      <FileText className="w-3.5 h-3.5 text-amber-300" />
+                      <span>{t('செய்திகள் & ஊடகக் குறிப்புகள்', 'News & Heritage Notes')}</span>
+                      <ExternalLink className="w-3 h-3 text-white/70" />
+                    </a>
+
+                    {/* 4. Email */}
+                    <a
+                      href="mailto:alumnimmc@gmail.com"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xs text-xs font-semibold text-white transition-all shadow-2xs"
+                      title="Email Dr. Arulpitchai Narayanan (MMC Alumni Office)"
+                    >
+                      <Mail className="w-3.5 h-3.5 text-amber-300" />
+                      <span>{t('மின்னஞ்சல் (MMC Alumni)', 'Email MMC Alumni')}</span>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Core Objectives List */}
         <div className="mb-16">
