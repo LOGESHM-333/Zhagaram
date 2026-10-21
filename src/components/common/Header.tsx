@@ -26,53 +26,57 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate, onOpen
 
   return (
     <header className="sticky top-0 z-40 bg-[#FAF8F5]/95 backdrop-blur-md border-b border-[#E8DFD5] transition-colors w-full">
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
-        <div className="flex items-center justify-between h-14 sm:h-16 md:h-20 gap-1.5 sm:gap-3 xl:gap-4">
+      <div className="w-full px-3 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
+        <div className="flex items-center justify-between h-14 sm:h-16 md:h-20 gap-3 sm:gap-6 w-full">
           
-          {/* ZONE 1: Brand Wordmark (Compact on mobile so all controls fit) */}
-          <button
-            onClick={() => onNavigate('/')}
-            className="flex items-center gap-1.5 sm:gap-2 text-left focus:outline-hidden group shrink-0 min-w-0"
-            aria-label="Zhagaram Trust Homepage"
-          >
-            <TrustLogo size={28} className="sm:w-8 sm:h-8 transition-transform group-hover:scale-105 shrink-0" />
-            <div className="flex flex-col min-w-0">
-              <span className="font-tamil-serif font-bold text-xs sm:text-base lg:text-lg text-[#132B20] tracking-tight leading-none group-hover:text-[#C85A32] transition-colors truncate max-w-[125px] xs:max-w-[160px] sm:max-w-none">
-                {language === 'ta' ? 'ழகரம் அறக்கட்டளை' : 'Zhagaram Trust'}
-              </span>
-              <span className="text-[10px] text-[#786E63] font-serif tracking-widest uppercase mt-0.5 whitespace-nowrap hidden lg:inline truncate">
-                {language === 'ta' ? 'தமிழ் அறிவுக் களஞ்சியம்' : 'Tamil Knowledge Foundation'}
-              </span>
-            </div>
-          </button>
+          {/* ZONE 1: Brand Wordmark (Anchored Left, Never Shrinks) */}
+          <div className="flex items-center justify-start shrink-0">
+            <button
+              onClick={() => onNavigate('/')}
+              className="flex items-center gap-1.5 sm:gap-2.5 text-left focus:outline-hidden group shrink-0"
+              aria-label="Zhagaram Trust Homepage"
+            >
+              <TrustLogo size={32} className="w-7 h-7 sm:w-8 sm:h-8 transition-transform group-hover:scale-105 shrink-0" />
+              <div className="flex flex-col">
+                <span className="font-tamil-serif font-bold text-xs sm:text-base lg:text-lg text-[#132B20] tracking-tight leading-none group-hover:text-[#C85A32] transition-colors whitespace-nowrap">
+                  {language === 'ta' ? 'ழகரம் அறக்கட்டளை' : 'Zhagaram Trust'}
+                </span>
+                <span className="text-[10px] text-[#786E63] font-serif tracking-widest uppercase mt-0.5 whitespace-nowrap hidden lg:inline">
+                  {language === 'ta' ? 'தமிழ் அறிவுக் களஞ்சியம்' : 'Tamil Knowledge Foundation'}
+                </span>
+              </div>
+            </button>
+          </div>
 
-          {/* ZONE 2: Desktop Navigation Links (Cleanly positioned on xl+ screens with ample space) */}
-          <nav className="hidden xl:flex items-center gap-1 xl:gap-2 2xl:gap-3.5 text-xs xl:text-[13px] 2xl:text-sm font-medium text-[#4A4036] shrink-0">
-            {navLinks.map(link => {
-              const isActive = currentRoute === link.route;
-              return (
-                <button
-                  key={link.route}
-                  onClick={() => onNavigate(link.route)}
-                  className={`relative py-1.5 px-1.5 xl:px-2 2xl:px-2.5 transition-colors whitespace-nowrap shrink-0 hover:text-[#132B20] ${
-                    isActive ? 'text-[#C85A32] font-semibold' : ''
-                  }`}
-                >
-                  {language === 'ta' ? link.label_ta : link.label_en}
-                  {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#C85A32] rounded-full" />
-                  )}
-                </button>
-              );
-            })}
+          {/* ZONE 2: Desktop Navigation Links (Centered, Uses All Available Center Space) */}
+          <nav className="hidden xl:flex flex-1 items-center justify-center min-w-0 px-2 lg:px-4">
+            <div className="flex items-center gap-1 xl:gap-2 2xl:gap-3 text-xs xl:text-xs 2xl:text-sm font-medium text-[#4A4036]">
+              {navLinks.map(link => {
+                const isActive = currentRoute === link.route;
+                return (
+                  <button
+                    key={link.route}
+                    onClick={() => onNavigate(link.route)}
+                    className={`relative py-1.5 px-2 xl:px-2.5 2xl:px-3 transition-colors whitespace-nowrap shrink-0 hover:text-[#132B20] ${
+                      isActive ? 'text-[#C85A32] font-semibold' : ''
+                    }`}
+                  >
+                    {language === 'ta' ? link.label_ta : link.label_en}
+                    {isActive && (
+                      <span className="absolute bottom-0 left-1 right-1 h-0.5 bg-[#C85A32] rounded-full" />
+                    )}
+                  </button>
+                );
+              })}
+            </div>
           </nav>
 
-          {/* ZONE 3: Utility Controls & Mobile Menu Toggle */}
-          <div className="flex items-center gap-1 sm:gap-1.5 xl:gap-2 shrink-0">
+          {/* ZONE 3: Utility Controls (Anchored Right, Never Shrinks) */}
+          <div className="flex items-center justify-end shrink-0 gap-1.5 sm:gap-2.5">
             {/* Search Icon Trigger */}
             <button
               onClick={onOpenSearch}
-              className="p-1 sm:p-1.5 text-[#4A4036] hover:text-[#132B20] hover:bg-[#EFE7DE] rounded-sm transition-colors shrink-0"
+              className="p-1.5 text-[#4A4036] hover:text-[#132B20] hover:bg-[#EFE7DE] rounded-sm transition-colors shrink-0"
               aria-label={t('தேடல்', 'Search')}
               title={t('வளங்களைத் தேடுக', 'Search resources')}
             >
@@ -82,7 +86,7 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate, onOpen
             {/* Language Switch Button */}
             <button
               onClick={toggleLanguage}
-              className="flex items-center px-1.5 sm:px-2 py-0.5 sm:py-1 border border-[#D5C9BD] hover:border-[#C85A32] rounded-sm text-[11px] sm:text-xs font-semibold text-[#132B20] bg-white/80 hover:bg-white transition-all whitespace-nowrap shadow-2xs shrink-0"
+              className="flex items-center px-2 py-1 border border-[#D5C9BD] hover:border-[#C85A32] rounded-sm text-xs font-semibold text-[#132B20] bg-white/80 hover:bg-white transition-all whitespace-nowrap shadow-2xs shrink-0"
               aria-label="Toggle Tamil and English"
               title={language === 'ta' ? 'Switch to English' : 'தமிழுக்கு மாறவும்'}
             >
@@ -94,7 +98,7 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate, onOpen
             {/* Admin CMS Access Link - Visible on mobile (icon) and desktop (icon + text) */}
             <button
               onClick={() => onNavigate('/admin')}
-              className={`flex items-center gap-1 p-1 sm:px-2 sm:py-1 border rounded-sm transition-colors text-xs font-semibold whitespace-nowrap shrink-0 shadow-2xs ${
+              className={`flex items-center gap-1.5 px-2.5 py-1 border rounded-sm transition-colors text-xs font-semibold whitespace-nowrap shrink-0 shadow-2xs ${
                 currentRoute === '/admin'
                   ? 'border-[#C85A32] bg-[#C85A32] text-white shadow-xs'
                   : 'border-[#D5C9BD] bg-white/80 hover:bg-white text-[#132B20] hover:border-[#C85A32]'
@@ -111,7 +115,7 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate, onOpen
             {/* Three Navigation Bar (Hamburger Menu ☰) - Always visible on mobile/tablet */}
             <button
               onClick={() => setMobileMenuOpen(prev => !prev)}
-              className="xl:hidden p-1 sm:p-1.5 text-[#4A4036] hover:text-[#132B20] hover:bg-[#EFE7DE] rounded-sm shrink-0 transition-colors"
+              className="xl:hidden p-1.5 text-[#4A4036] hover:text-[#132B20] hover:bg-[#EFE7DE] rounded-sm shrink-0 transition-colors"
               aria-label="Toggle navigation menu"
               title="பட்டி (Menu)"
             >
