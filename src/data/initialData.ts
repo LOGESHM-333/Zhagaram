@@ -7,8 +7,8 @@ export const initialTrustSettings: TrustSettings = {
   motto_en: 'Learn in Your Language. Grow Through Knowledge.',
   email: 'contact@zhagaramtrust.org',
   phone: '99522 29568',
-  address_ta: 'அரசு ஓமந்தூரார் மருத்துவக் கல்லூரி வளாகம், வாலாஜா சாலை, சென்னை - 600002, தமிழ்நாடு',
-  address_en: 'Govt. Omandurar Medical College Campus, Walajah Road, Chennai - 600002, Tamil Nadu, India',
+  address_ta: 'எண் 5, 9 அவென்யூ, ஹாரிங்டன் ரோடு, சேத்துப்பட்டு, சென்னை - 600031, தமிழ்நாடு',
+  address_en: 'No. 5, 9th Avenue, Harrington Road, Chetpet, Chennai - 600031, Tamil Nadu, India',
   youtube_playlist_url: 'https://youtube.com/playlist?list=PLqAGZgQ8AD2sxSFrSfhbHKMOjjxZ6CrHG',
   registration_number: 'TN/CHN/TRUST/2018/4892',
 };

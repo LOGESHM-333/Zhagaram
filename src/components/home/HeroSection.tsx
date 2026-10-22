@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, BookOpen, Calendar, Video, FileText, ImageIcon, ShieldCheck } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
+import { useData } from '../../context/DataContext';
 
 interface HeroSectionProps {
   onNavigate: (route: string) => void;
@@ -8,6 +9,7 @@ interface HeroSectionProps {
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
   const { language, t } = useLanguage();
+  const { settings } = useData();
 
   const tamilPictureUrl = '/assets/aistudio/WhatsApp_Image_2026-10-20_at_1.07.37_PM_8790fe47.jpeg';
   const zhagaramLogoUrl = '/assets/aistudio/WhatsApp_Image_2026-10-20_at_1.07.36_PM_1015e3fc.jpeg';
@@ -46,7 +48,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
                 {t('ழகரம் அறக்கட்டளை · கல்வி & அறிவியல் தளம்', 'Zhagaram Educational & Medical Foundation')}
               </span>
               <span className="text-[10px] sm:text-[11px] text-[#5C5044] font-serif italic truncate block">
-                {t('அரசு ஓமந்தூரார் மருத்துவக் கல்லூரி வளாகம், சென்னை', 'Govt. Omandurar Medical College Campus, Chennai')}
+                {t(settings.address_ta, settings.address_en)}
               </span>
             </div>
           </div>

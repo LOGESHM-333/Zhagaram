@@ -134,7 +134,22 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [settings, setSettings] = useState<TrustSettings>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEYS.SETTINGS);
-      return saved ? JSON.parse(saved) : initialTrustSettings;
+      if (!saved) return initialTrustSettings;
+      const parsed = JSON.parse(saved);
+      if (
+        !parsed.address_en ||
+        parsed.address_en.includes('Omandurar') ||
+        parsed.address_ta?.includes('ஓமந்தூரார்')
+      ) {
+        const updated = {
+          ...parsed,
+          address_ta: initialTrustSettings.address_ta,
+          address_en: initialTrustSettings.address_en,
+        };
+        localStorage.setItem(STORAGE_KEYS.SETTINGS, JSON.stringify(updated));
+        return updated;
+      }
+      return parsed;
     } catch {
       return initialTrustSettings;
     }
